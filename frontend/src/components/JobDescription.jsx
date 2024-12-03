@@ -10,12 +10,13 @@ import { APPLICATION_API_END_POINT, JOB_API_END_POINT } from "@/utils/constant";
 import { toast } from "sonner";
 
 const JobDescription = () => {
+  const {singleJob} = useSelector(store => store.job);
+  const {user} = useSelector(store=>store.auth)
+
   const isInitiallyApplied = singleJob?.applications?.some(application=> application.applicant == user?.id ) || false;
   const [isApplied, setIsApplied] = useState(isInitiallyApplied)
   const params= useParams();
   const jobId = params.id;
-  const {singleJob} = useSelector(store => store.job);
-  const {user} = useSelector(store=>store.auth)
   const dispatch = useDispatch();
 
 
@@ -57,7 +58,7 @@ const JobDescription = () => {
           <h1 className="font-bold text-xl">{singleJob?.title}</h1>
           <div className="flex items-center gap-2 mt-4">
             <Badge className={"text-blue-700 font-bold"} variant="ghost">
-              {singleJob?.positions} Positions
+              {singleJob?.position} Positions
             </Badge>
             <Badge className={"text-[#F83002] font-bold"} variant="ghost">
               {singleJob?.jobType}

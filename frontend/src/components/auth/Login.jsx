@@ -69,7 +69,7 @@ const Login = () => {
               value={input.email}
               name="email"
               onChange={changeEventHandler}
-              placeholder="patel@gmail.com"
+              placeholder="Enter your email address"
             />
           </div>
 
@@ -80,7 +80,7 @@ const Login = () => {
               value={input.password}
               name="password"
               onChange={changeEventHandler}
-              placeholder="patel@gmail.com"
+              placeholder="Enter your email address"
             />
           </div>
           <div className="flex items-center justify-between">
@@ -120,7 +120,7 @@ const Login = () => {
             </Button>
           )}
           <span className="text-sm">
-            Don't have an account?{" "}
+            Dont have an account?{" "}
             <Link to="/signup" className="text-blue-600">
               Signup
             </Link>

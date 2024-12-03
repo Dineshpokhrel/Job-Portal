@@ -12,7 +12,10 @@ import { Badge } from "./ui/badge";
 import { useSelector } from "react-redux";
 
 const AppliedJobTable = () => {
-  const { allAppliedJobs } = useSelector((store) => store.job);
+  //const { allAppliedJobs } = useSelector((store) => store.job);
+  // Safely default to an empty array if allAppliedJobs is undefined
+  const { allAppliedJobs = [] } = useSelector((store) => store.job);
+  console.log("allAppliedJobs:", allAppliedJobs);
   return (
     <div>
       <Table>
@@ -37,7 +40,7 @@ const AppliedJobTable = () => {
             ))
           } */}
           {allAppliedJobs.length <= 0 ? (
-            <span>You haven't applied any job yet.</span>
+            <span>You havent applied any job yet.</span>
           ) : (
             allAppliedJobs.map((appliedJob) => (
               <TableRow key={appliedJob._id}>

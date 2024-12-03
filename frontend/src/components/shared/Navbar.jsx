@@ -109,7 +109,6 @@ export default function Navbar() {
                       <div className="flex w-fit items-center gap-2 cursor-pointer">
                         <User2 />
                         <Button variant="link">
-                          {" "}
                           <Link to="/profile">View Profile</Link>
                         </Button>
                       </div>
